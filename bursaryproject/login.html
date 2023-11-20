@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('gym home image.jpg') center/cover no-repeat; /* Add your background image URL here */
+        }
+
+        .form-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            margin: auto;
+        }
+
+        .form-header {
+            background-color: #3498db;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .form-body {
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-group button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        @media (min-width: 768px) {
+            .form-container {
+                width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container" id="form-container">
+        <div class="form-header">
+            <h2 id="form-title">Login</h2>
+        </div>
+        <div class="form-body">
+            <form action="#" method="post" id="login-form">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Login</button>
+                </div>
+                <p id="form-switch">Don't have an account? <a href="#" onclick="toggleForm()">Register</a></p>
+            </form>
+
+            <form action="#" method="post" id="register-form" style="display: none;">
+                <div class="form-group">
+                    <label for="reg-username">Username:</label>
+                    <input type="text" id="reg-username" name="reg-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Password:</label>
+                    <input type="password" id="reg-password" name="reg-password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Register</button>
+                </div>
+                <p id="form-switch">Already have an account? <a href="#" onclick="toggleForm()">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm() {
+            var formContainer = document.getElementById('form-container');
+            var formTitle = document.getElementById('form-title');
+            var loginForm = document.getElementById('login-form');
+            var registerForm = document.getElementById('register-form');
+
+            if (formTitle.innerText === 'Login') {
+                formTitle.innerText = 'Register';
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+            } else {
+                formTitle.innerText = 'Login';
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+            }
+        }
+    </script>
+    
+</body>
+</html>
+
+
